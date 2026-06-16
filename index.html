@@ -1,0 +1,416 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGM8HV7LWN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LGM8HV7LWN');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Turista — Every Street Has a Story. Hear It Now.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="#home" class="logo logo--dark">
+        <span class="logo__text">El Turista</span>
+        <svg class="logo__icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="11" fill="#1765FF"/>
+          <path d="M11 5.5C8.51 5.5 6.5 7.51 6.5 10C6.5 13.5 11 18 11 18C11 18 15.5 13.5 15.5 10C15.5 7.51 13.49 5.5 11 5.5Z" fill="white"/>
+        </svg>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#video" class="nav-link">Video</a>
+      </nav>
+
+      <a href="#download" class="btn-cta">Get the App</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========== MOBILE MENU ========== -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu__inner">
+      <div class="mobile-menu__top">
+        <a href="#home" class="logo logo--dark">
+          <span class="logo__text">El Turista</span>
+          <svg class="logo__icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="11" r="11" fill="#1765FF"/>
+            <path d="M11 5.5C8.51 5.5 6.5 7.51 6.5 10C6.5 13.5 11 18 11 18C11 18 15.5 13.5 15.5 10C15.5 7.51 13.49 5.5 11 5.5Z" fill="white"/>
+          </svg>
+        </a>
+        <button class="close-btn" id="closeMenu" aria-label="Close menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <nav class="mobile-nav">
+        <a href="#home" class="mobile-nav__link mobile-nav__link--active">Home</a>
+        <a href="#features" class="mobile-nav__link">Features</a>
+        <a href="#how-it-works" class="mobile-nav__link">How It Works</a>
+        <a href="#video" class="mobile-nav__link">Video</a>
+      </nav>
+
+      <div class="mobile-menu__bottom">
+        <a href="#" class="btn-store btn-store--black btn-store--full" data-store="ios">
+          <img src="assets/images/Apple-w.svg" alt="App Store" class="btn-store__icon">
+          <span>App Store</span>
+        </a>
+        <a href="#" class="btn-store btn-store--black btn-store--full" data-store="android">
+          <img src="assets/images/playstore.svg" alt="Google Play" class="btn-store__icon">
+          <span>Google Play</span>
+        </a>
+        <div class="mobile-menu__social">
+          <p class="mobile-menu__social-label">Follow us</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="TikTok">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.03a8.16 8.16 0 004.77 1.52V7.11a4.85 4.85 0 01-1-.42z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="mobile-menu__legal">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <span>support@elturista.app</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="home">
+    <div class="hero__bg">
+      <img src="assets/images/city-square2.png" alt="" class="hero__bg-img" aria-hidden="true">
+    </div>
+
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <h1 class="hero__title">Every Street Has a Story.<br>Hear It Now.</h1>
+        <p class="hero__subtitle">The AI-powered audio guide that turns your city map<br class="desktop-only"> into a live museum</p>
+        <div class="store-buttons">
+          <a href="#" class="btn-store btn-store--light" data-store="ios">
+            <img src="assets/images/Apple.svg" alt="App Store" class="btn-store__icon">
+            <span>App Store</span>
+          </a>
+          <a href="#" class="btn-store btn-store--light" data-store="android">
+           <img src="assets/images/playstore.svg" alt="Google Play" class="btn-store__icon">
+            <span>Google Play</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__phone-area">
+        <img src="assets/images/wave-left.png" alt="" class="wave-img wave-img--left" aria-hidden="true">
+        <img src="assets/images/phone_mockup_hero.png" alt="El Turista App" class="hero__phone">
+        <img src="assets/images/wave-right.png" alt="" class="wave-img wave-img--right" aria-hidden="true">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CITY EXPLORATION SECTION ========== -->
+  <section class="city-section" id="how-it-works">
+    <div class="container city-section__inner">
+      <div class="city-section__text">
+        <h2 class="section-title">City Exploration with Audio-Guide</h2>
+        <p class="section-body">Turn on Guide mode and just walk from sight to sight. As you approach any landmark, El Turista automatically detects it, reveals its history, and begins the AI audio story. Enjoy the city at your own pace — the app does all the searching for you.</p>
+        <p class="city-section__note">*Works beautifully <b>with both headphones and your phone's speaker</b></p>
+      </div>
+
+      <div class="city-section__visual">
+        <img src="assets/images/city-exploration-illust.png" alt="City exploration illustration" class="city-section__img">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS / 3 STEPS ========== -->
+  <section class="steps-section" id="video">
+    <div class="container">
+      <div class="steps-section__header">
+        <span class="label-badge">
+          <svg class="label-badge__icon" width="16" height="16" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="11" fill="#1F1F1F"/>
+            <path d="M11 5.5C8.51 5.5 6.5 7.51 6.5 10C6.5 13.5 11 18 11 18C11 18 15.5 13.5 15.5 10C15.5 7.51 13.49 5.5 11 5.5Z" fill="#FFFFFF"/>
+          </svg>
+          3 Simple Steps
+        </span>
+        <h2 class="section-title">Your Audio-Guide, Always On</h2>
+        <p class="section-body steps-section__subtitle">No tour guide. No heavy guidebook. No pre-planned route. Just open the app, put on your earphones, and let the city speak to you — one story at a time.</p>
+      </div>
+
+      <div class="steps-grid">
+        <article class="step-card step-card--1">
+          <div class="step-card__body">
+            <div class="step-card__head">
+              <div class="step-card__num">1</div>
+              <h3 class="step-card__title">Turn on Guide Mode</h3>
+            </div>
+            <p class="step-card__desc">Activate the Mode and let the app track your location as you walk</p>
+          </div>
+          <div class="step-card__img-wrap">
+            <img src="assets/images/tourist-phone.png" alt="Turn on Guide Mode" class="step-card__img">
+          </div>
+        </article>
+
+        <article class="step-card step-card--2">
+          <div class="step-card__body">
+            <div class="step-card__head">
+              <div class="step-card__num">2</div>
+              <h3 class="step-card__title">Get Closer to Sights</h3>
+            </div>
+            <p class="step-card__desc">Approach your sights of interest. The app instantly detects them</p>
+          </div>
+          <div class="step-card__img-wrap">
+            <img src="assets/images/tourist-walking.png" alt="Get Closer to Sights" class="step-card__img">
+          </div>
+        </article>
+
+        <article class="step-card step-card--3">
+          <div class="step-card__body">
+            <div class="step-card__head">
+              <div class="step-card__num">3</div>
+              <h3 class="step-card__title">Listen &amp; Explore</h3>
+            </div>
+            <p class="step-card__desc">High-quality AI stories play automatically. Just look around</p>
+          </div>
+          <div class="step-card__img-wrap">
+            <img src="assets/images/tourist-cathedral.png" alt="Listen & Explore" class="step-card__img">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== KEY FEATURES ========== -->
+  <section class="features-section" id="features">
+    <div class="features-section__bg">   
+      <picture>
+        <source media="(max-width: 767px)" srcset="assets/images/key-features-m.png">
+        <img src="assets/images/key-features@2x.png" alt="" aria-hidden="true" class="features-section__bg-img">
+      </picture>
+    </div>
+
+    <div class="features-section__waves" aria-hidden="true">
+      <img src="assets/images/wave-left.png" alt="" class="wave-img wave-img--left wave-img--features">
+      <img src="assets/images/wave-right.png" alt="" class="wave-img wave-img--right wave-img--features">
+    </div>
+
+    <div class="container">
+      <div class="features-section__header">
+        <span class="label-badge label-badge--white">
+          <svg class="label-badge__icon" width="16" height="16" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="11" fill="#fff"/>
+            <path d="M11 5.5C8.51 5.5 6.5 7.51 6.5 10C6.5 13.5 11 18 11 18C11 18 15.5 13.5 15.5 10C15.5 7.51 13.49 5.5 11 5.5Z" fill="#1D82F1"/>
+          </svg>
+          Built for Explorers
+        </span>
+        <h2 class="section-title section-title--white">Key Features</h2>
+        <p class="section-body section-body--white">The features that turn a simple walk into a journey you'll never forget</p>
+      </div>
+
+      <div class="features-section__grid">
+        <div class="features-section__side features-section__side--left">
+          <article class="feature-card feature-card--storyteller">
+            <div class="feature-card__icon" aria-hidden="true">
+              <img src="assets/images/star.svg" alt="AI Storyteller" class="feature-card__icon-img">
+            </div>
+            <div class="feature-card__body">
+              <h3 class="feature-card__title">AI Storyteller:</h3>
+              <p class="feature-card__desc">Not just facts, but engaging stories generated in real-time</p>
+            </div>
+          </article>
+
+          <article class="feature-card feature-card--language">
+            <div class="feature-card__icon" aria-hidden="true">
+              <img src="assets/images/lang.svg" alt="Multi-language" class="feature-card__icon-img">
+            </div>
+            <div class="feature-card__body">
+              <h3 class="feature-card__title">Multi-language:</h3>
+              <p class="feature-card__desc">Your personal guide speaks your language</p>
+            </div>
+          </article>
+
+          <div class="feature-card feature-card--placeholder" aria-hidden="true">
+            <div class="feature-card__icon">
+              <span class="feature-card__icon-img"></span>
+            </div>
+            <div class="feature-card__body">
+              <h3 class="feature-card__title">Instant Discovery:</h3>
+              <p class="feature-card__desc">No pre-planning. Open the app and discover stories on the go</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="features-section__phone-col">
+          <img src="assets/images/phone_hero.png" alt="El Turista App Map View" class="features-section__phone">
+        </div>
+
+        <div class="features-section__side features-section__side--right">
+          <div class="feature-card feature-card--placeholder" aria-hidden="true">
+            <div class="feature-card__icon">
+              <span class="feature-card__icon-img"></span>
+            </div>
+            <div class="feature-card__body">
+              <h3 class="feature-card__title">Instant Discovery:</h3>
+              <p class="feature-card__desc">No pre-planning. Open the app and discover stories on the go</p>
+            </div>
+          </div>
+
+          <article class="feature-card feature-card--discovery">
+            <div class="feature-card__icon" aria-hidden="true">
+              <img src="assets/images/search.svg" alt="Instant Discovery" class="feature-card__icon-img">
+            </div>
+            <div class="feature-card__body">
+              <h3 class="feature-card__title">Instant Discovery:</h3>
+              <p class="feature-card__desc">No pre-planning. Open the app and discover stories on the go</p>
+            </div>
+          </article>
+
+          <article class="feature-card feature-card--audio">
+            <div class="feature-card__icon" aria-hidden="true">
+              <img src="assets/images/headphones.svg" alt="Immersive Audio" class="feature-card__icon-img">
+            </div>
+            <div class="feature-card__body">
+              <h3 class="feature-card__title">Immersive Audio:</h3>
+              <p class="feature-card__desc">High-quality voiceovers that blend perfectly with your walk</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DOWNLOAD CTA ========== -->
+  <section class="download-section" id="download">
+    <div class="container download-section__inner">
+      <div class="download-section__left">
+        <div class="download-section__text">
+          <h2 class="section-title">Download El Turista</h2>
+          <p class="section-body">Your next walk will never be the same. Available now on iOS and Android — free to download, free to explore.</p>
+          <div class="store-buttons download-section__btns">
+            <a href="#" class="btn-store btn-store--dark" data-store="ios">
+              <img src="assets/images/Apple-w.svg" alt="App Store" class="btn-store__icon">
+              <span>App Store</span>
+            </a>
+            <a href="#" class="btn-store btn-store--dark" data-store="android">
+              <img src="assets/images/playstore.svg" alt="Google Play" class="btn-store__icon">
+              <span>Google Play</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="download-section__phone-col desktop-only">
+        <img src="assets/images/phone_download.png" alt="El Turista App" class="download-section__phone">
+      </div>
+
+      <div class="download-section__collage" aria-hidden="true">
+        <div class="download-section__collage-inner">
+          <img src="assets/images/circle-m.png" alt="" class="download-section__layer download-section__layer--circle">
+          <img src="assets/images/wave-m-left.png" alt="" class="download-section__layer download-section__layer--wave-left">
+          <img src="assets/images/colosseum-m.png" alt="" class="download-section__layer download-section__layer--colosseum">
+          <img src="assets/images/phone_download.png" alt="" class="download-section__layer download-section__layer--phone">
+          <img src="assets/images/grass-m.png" alt="" class="download-section__layer download-section__layer--grass">
+          <img src="assets/images/wave-m-right.png" alt="" class="download-section__layer download-section__layer--wave-right">
+        </div>
+      </div>
+    </div>
+
+    <div class="download-section__illust desktop-only">
+      <img src="assets/images/footer-illutration.png" alt="Colosseum illustration" class="download-section__colosseum">
+    </div>
+
+    <div class="download-section__wave" aria-hidden="true">
+      <svg class="download-section__wave-svg" viewBox="0 0 1440 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#1A1A1A" d="M0 180V52C180 86 340 36 520 48C700 60 860 118 1020 104C1180 90 1320 34 1440 44V180H0Z"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#home" class="logo">
+          <span class="logo__text">El Turista</span>
+          <svg class="logo__icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="11" r="11" fill="#1765FF"/>
+            <path d="M11 5.5C8.51 5.5 6.5 7.51 6.5 10C6.5 13.5 11 18 11 18C11 18 15.5 13.5 15.5 10C15.5 7.51 13.49 5.5 11 5.5Z" fill="white"/>
+          </svg>
+        </a>
+        <p class="footer__tagline">Your AI-powered audio guide.<br>Turn any city into a living museum</p>
+        <div class="social-links social-links--footer">
+          <a href="#" class="social-link social-link--footer" aria-label="TikTok">
+            <img src="assets/images/tt.svg" alt="TikTok" class="social-link__icon">
+          </a>
+          <a href="#" class="social-link social-link--footer" aria-label="Instagram">
+            <img src="assets/images/inst.svg" alt="Instagram" class="social-link__icon">
+          </a>
+          <a href="#" class="social-link social-link--footer" aria-label="YouTube">
+            <img src="assets/images/yt.svg" alt="YouTube" class="social-link__icon">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__links">
+        <div class="footer__col">
+          <h4 class="footer__col-title">Product</h4>
+          <a href="#features" class="footer__link">Features</a>
+          <a href="#how-it-works" class="footer__link">How It Works</a>
+          <a href="#video" class="footer__link">Video</a>
+          <a href="#download" class="footer__link desktop-only">Download</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Legal</h4>
+          <a href="privacy-policy.html" class="footer__link">Privacy Policy</a>
+          <a href="#" class="footer__link desktop-only">Cookie Policy</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Support</h4>
+          <a href="mailto:support@elturista.app" class="footer__link">support@elturista.app</a>
+          <a href="#" class="footer__link">FAQ</a>
+          <a href="#" class="footer__link">Contact Us</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p class="footer__copy">© 2026 El Turista. All rights reserved.</p>
+        <div class="footer__bottom-links desktop-only">
+          <a href="privacy-policy.html" class="footer__bottom-link">Privacy Policy</a>
+          <a href="#" class="footer__bottom-link">Terms of Service</a>
+          <a href="#" class="footer__bottom-link">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
