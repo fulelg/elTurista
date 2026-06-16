@@ -1,9 +1,20 @@
 $ErrorActionPreference = "Stop"
 
 $repoName = "elTurista"
+$ghPath = "C:\Program Files\GitHub CLI\gh.exe"
 
-if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
-  Write-Error "GitHub CLI (gh) is not installed. Run: winget install GitHub.cli"
+if (-not (Test-Path $ghPath)) {
+  $ghCmd = Get-Command gh -ErrorAction SilentlyContinue
+  if ($ghCmd) {
+    $ghPath = $ghCmd.Source
+  } else {
+    Write-Error "GitHub CLI not found. Install: winget install GitHub.cli, then restart the terminal."
+  }
+}
+
+function gh {
+  param([Parameter(ValueFromRemainingArguments = $true)][string[]]$Args)
+  & $ghPath @Args
 }
 
 gh auth status | Out-Null
