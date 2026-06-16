@@ -22,7 +22,8 @@ gh auth status | Out-Null
 $owner = (gh api user --jq .login).Trim()
 Write-Host "GitHub user: $owner"
 
-if (-not (git remote get-url origin 2>$null)) {
+$originUrl = git remote get-url origin 2>$null
+if (-not $originUrl) {
   gh repo create $repoName --public --source=. --remote=origin --push
 } else {
   git push -u origin main
