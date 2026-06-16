@@ -22,8 +22,28 @@ gh auth status | Out-Null
 $owner = (gh api user --jq .login).Trim()
 Write-Host "GitHub user: $owner"
 
-$originUrl = git remote get-url origin 2>$null
-if (-not $originUrl) {
+# Bust browser cache for CSS/JS on each deploy
+$cacheVersion = Get-Date -Format "yyyyMMddHHmm"
+$htmlFiles = @("index.html", "privacy-policy.html")
+foreach ($path in $htmlFiles) {
+  if (-not (Test-Path $path)) { continue }
+  $content = Get-Content $path -Raw
+  $content = $content -replace 'assets/css/style\.css(\?v=[^"]*)?', "assets/css/style.css?v=$cacheVersion"
+  $content = $content -replace 'assets/css/legal\.css(\?v=[^"]*)?', "assets/css/legal.css?v=$cacheVersion"
+  $content = $content -replace 'assets/js/main\.js(\?v=[^"]*)?', "assets/js/main.js?v=$cacheVersion"
+  [System.IO.File]::WriteAllText((Join-Path (Get-Location) $path), $content)
+}
+Write-Host "Asset cache version: $cacheVersion"
+
+git add index.html privacy-policy.html 2>$null
+$pending = git diff --cached --name-only
+if ($pending) {
+  git commit -m "Bump asset cache version to $cacheVersion"
+}
+
+$hasOrigin = [bool](git remote 2>$null | Where-Object { $_ -eq 'origin' })
+
+if (-not $hasOrigin) {
   gh repo create $repoName --public --source=. --remote=origin --push
 } else {
   git push -u origin main
