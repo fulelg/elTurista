@@ -210,6 +210,23 @@ ul {
   justify-content: center;
 }
 
+.store-buttons .btn-store,
+.download-section__btns .btn-store {
+  flex: 1 1 200px;
+  max-width: 220px;
+  min-width: 200px;
+  justify-content: center;
+}
+
+.title-line {
+  white-space: nowrap;
+  font-size: inherit;
+}
+
+.nowrap-text {
+  white-space: nowrap;
+}
+
 /* ---- SOCIAL LINKS ---- */
 .social-links {
   display: flex;
@@ -1343,10 +1360,22 @@ ul {
     max-width: 360px;
   }
 
-  .hero__title {
-    font-size: clamp(30px, 8.2vw, 36px);
+  .hero__title,
+  .section-title {
+    font-size: clamp(26px, 7vw, 34px);
     line-height: 1.15;
+  }
+
+  .hero__title {
     margin-bottom: 16px;
+  }
+
+  .steps-section__header .section-title {
+    font-size: clamp(36px, 4vw, 56px);
+  }
+
+  .steps-section__header .section-title .title-line {
+    white-space: normal;
   }
 
   .hero__subtitle {
@@ -1361,6 +1390,12 @@ ul {
     gap: 10px;
     flex-wrap: nowrap;
     justify-content: center;
+  }
+
+  .store-buttons .btn-store {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
   }
 
   html[data-platform="ios"] .btn-store[data-store="android"],
@@ -1559,6 +1594,7 @@ ul {
     flex: none;
     width: 100%;
     max-width: 300px;
+    min-width: 0;
     font-size: 16px;
     padding: 16px 32px;
     gap: 10px;
@@ -1655,8 +1691,13 @@ ul {
    RESPONSIVE — SMALL MOBILE (≤400px)
    ============================================ */
 @media (max-width: 400px) {
-  .hero__title {
-    font-size: 28px;
+  .hero__title,
+  .section-title {
+    font-size: 24px;
+  }
+
+  .steps-section__header .section-title {
+    font-size: clamp(36px, 4vw, 56px);
   }
 
   .btn-store {
