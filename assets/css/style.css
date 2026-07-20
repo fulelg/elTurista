@@ -962,13 +962,17 @@ ul {
 }
 
 .wave-img--features.wave-img--left {
-  left: 15%;
-  bottom: clamp(108px, 22vw, 248px);
+  left: 8%;
+  right: auto;
+  bottom: auto;
+  top: 26%;
 }
 
 .wave-img--features.wave-img--right {
-  right: 15%;
-  bottom: clamp(108px, 15vw, 168px);
+  right: 10%;
+  left: auto;
+  bottom: auto;
+  top: 68%;
 }
 
 
@@ -1092,7 +1096,7 @@ ul {
   content: '';
   position: absolute;
   inset: auto 0 0 0;
-  height: clamp(180px, 48vw, 203px);
+  height: clamp(320px, 42vw, 560px);
   z-index: 0;
   pointer-events: none;
   opacity: 0.51;
@@ -1128,7 +1132,7 @@ ul {
 
 .download-section__illust {
   position: absolute;
-  bottom: 0;
+  bottom: -100px;
   left: 50%;
   z-index: 3;
   width: 100vw;
@@ -1794,7 +1798,7 @@ ul {
 
   .download-section::after {
     display: block;
-    height: clamp(360px, 96vw, 480px);
+    height: clamp(420px, 110vw, 580px);
     opacity: 0.51;
     background: linear-gradient(180deg, #ffffff 0%, #527fda 54%);
   }
