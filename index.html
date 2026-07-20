@@ -1,6 +1,8 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGM8HV7LWN"></script>
   <script>
@@ -10,8 +12,6 @@
 
     gtag('config', 'G-LGM8HV7LWN');
   </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SelfTour – Your AI-powered personal tour guide</title>
   <meta name="description" content="Discover stories behind nearby sights with your AI-powered personal tour guide. No searching online, planning routes, or booking tours.">
   <link rel="canonical" href="https://selftour.app/">
@@ -46,7 +46,7 @@
         <img src="assets/images/logo-selftour-white.svg" alt="" class="logo__img logo__img--light" width="94" height="19" aria-hidden="true">
       </a>
 
-      <nav class="nav-links" id="navLinks">
+      <nav class="nav-links">
         <a href="#home" class="nav-link active">Home</a>
         <a href="#city-exploration" class="nav-link">Experience</a>
         <a href="#benefits" class="nav-link">Benefits</a>
@@ -110,7 +110,7 @@
         <div class="mobile-menu__legal">
           <a href="privacy-policy.html">Privacy Policy</a>
           <a href="terms-of-use.html">Terms of Use</a>
-          <span>support@selftour.app</span>
+          <a href="mailto:support@selftour.app">support@selftour.app</a>
         </div>
       </div>
     </div>
@@ -142,6 +142,7 @@
         <img src="assets/images/wave-left.webp" alt="" class="wave-img wave-img--left" aria-hidden="true">
         <svg class="hero__phone-sprite" aria-hidden="true" width="0" height="0" focusable="false">
           <defs>
+            <!-- Mask hole matches --phone-screen-* vars in style.css -->
             <mask id="hero-phone-bezel-mask" maskContentUnits="objectBoundingBox">
               <rect width="1" height="1" fill="white"></rect>
               <rect x="0.035" y="0.015" width="0.93" height="0.965" rx="0.108" ry="0.051" fill="black"></rect>
@@ -169,7 +170,7 @@
     <div class="container city-section__inner">
       <div class="city-section__text">
         <h2 class="section-title">City Exploration with Audio-Guide</h2>
-        <p class="section-body">Turn on Guide mode and just walk from sight to sight. As you approach any landmark, El Turista automatically detects it, reveals its history, and begins the AI audio story. Enjoy the city at your own pace — the app does all the searching for you.</p>
+        <p class="section-body">Turn on Guide mode and just walk from sight to sight. As you approach any landmark, SelfTour automatically detects it, reveals its history, and begins the AI audio story. Enjoy the city at your own pace — the app does all the searching for you.</p>
         <p class="city-section__note">*Works beautifully <b>with both headphones and your phone's speaker</b></p>
       </div>
 
@@ -198,7 +199,7 @@
           Benefits
         </span>
         <div class="benefits-section__intro">
-          <h2 class="section-title section-title--white">Why Travelers Choose El Turista</h2>
+          <h2 class="section-title section-title--white">Why Travelers Choose SelfTour</h2>
           <p class="section-body section-body--white benefits-section__subtitle">Everything you need to explore every city with confidence</p>
         </div>
       </div>
@@ -338,31 +339,15 @@
             </div>
           </article>
 
-          <div class="feature-card feature-card--placeholder" aria-hidden="true">
-            <div class="feature-card__icon">
-              <span class="feature-card__icon-img"></span>
-            </div>
-            <div class="feature-card__body">
-              <h3 class="feature-card__title">Instant Discovery:</h3>
-              <p class="feature-card__desc">No pre-planning. Open the app and discover stories on the go</p>
-            </div>
-          </div>
+          <div class="features-section__grid-spacer" aria-hidden="true"></div>
         </div>
 
         <div class="features-section__phone-col">
-          <img src="assets/images/phone_hero.webp" alt="El Turista App Map View" class="features-section__phone">
+          <img src="assets/images/phone_hero.webp" alt="SelfTour app map view" class="features-section__phone">
         </div>
 
         <div class="features-section__side features-section__side--right">
-          <div class="feature-card feature-card--placeholder" aria-hidden="true">
-            <div class="feature-card__icon">
-              <span class="feature-card__icon-img"></span>
-            </div>
-            <div class="feature-card__body">
-              <h3 class="feature-card__title">Instant Discovery:</h3>
-              <p class="feature-card__desc">No pre-planning. Open the app and discover stories on the go</p>
-            </div>
-          </div>
+          <div class="features-section__grid-spacer" aria-hidden="true"></div>
 
           <article class="feature-card feature-card--discovery">
             <div class="feature-card__icon" aria-hidden="true">
@@ -393,7 +378,7 @@
     <div class="container download-section__inner">
       <div class="download-section__left">
         <div class="download-section__text">
-          <h2 class="section-title">Download <span class="nowrap-text">El&nbsp;Turista</span></h2>
+          <h2 class="section-title">Download SelfTour</h2>
           <p class="section-body">Your next walk will never be the same. Available now on iOS and Android — free to download, free to explore.</p>
           <div class="store-buttons download-section__btns">
             <a href="https://apps.apple.com/app/id6756697981" class="btn-store btn-store--dark" data-store="ios" target="_blank" rel="noopener noreferrer">
@@ -409,7 +394,7 @@
       </div>
 
       <div class="download-section__phone-col desktop-only">
-        <img src="assets/images/phone_download.webp" alt="El Turista App" class="download-section__phone">
+        <img src="assets/images/phone_download.webp" alt="SelfTour app" class="download-section__phone">
       </div>
 
       <div class="download-section__collage" aria-hidden="true">
@@ -491,6 +476,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=202606151900"></script>
+  <script src="assets/js/main.js?v=202606152100"></script>
 </body>
 </html>

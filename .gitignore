@@ -5,3 +5,5 @@ desktop.ini
 .env
 .env.*
 node_modules/
+*.zip
+assets/hero-vid.mp4

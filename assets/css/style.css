@@ -1,5 +1,5 @@
 /* ============================================
-   EL TURISTA — LANDING PAGE STYLES
+   SelfTour — LANDING PAGE STYLES
    ============================================ */
 
 /* ---- CSS Custom Properties ---- */
@@ -25,6 +25,18 @@
 
   --shadow-card: 0 8px 32px rgba(23, 101, 255, 0.10);
   --shadow-phone: 0 24px 64px rgba(0, 0, 0, 0.25);
+
+  /* Hero phone — keep SVG bezel mask in index.html in sync */
+  --phone-aspect-w: 766;
+  --phone-aspect-h: 1312;
+  --phone-screen-top: 1.5%;
+  --phone-screen-left: 3.5%;
+  --phone-screen-width: 93%;
+  --phone-screen-height: 96.5%;
+  --phone-screen-radius-x: 10.8%;
+  --phone-screen-radius-y: 5.1%;
+  --phone-notch-top: 2.2%;
+  --phone-notch-width: 31%;
 }
 
 /* ---- Reset & Base ---- */
@@ -227,7 +239,6 @@ ul {
 .social-links {
   display: flex;
   gap: 12px;
-  justify-content: center;
 }
 
 .social-link {
@@ -245,40 +256,6 @@ ul {
 .social-link:hover {
   background: rgba(31,31,31,0.12);
   transform: translateY(-2px);
-}
-
-/* ---- WAVEFORM ANIMATION ---- */
-.waveform {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  height: 24px;
-}
-
-.waveform--sm {
-  height: 18px;
-  gap: 2px;
-}
-
-.waveform__bar {
-  display: block;
-  width: 3px;
-  border-radius: 2px;
-  background: var(--blue);
-  animation: waveAnim 1.2s ease-in-out infinite;
-}
-
-.waveform__bar:nth-child(1) { height: 40%; animation-delay: 0s; }
-.waveform__bar:nth-child(2) { height: 80%; animation-delay: 0.1s; }
-.waveform__bar:nth-child(3) { height: 100%; animation-delay: 0.2s; }
-.waveform__bar:nth-child(4) { height: 60%; animation-delay: 0.3s; }
-.waveform__bar:nth-child(5) { height: 90%; animation-delay: 0.4s; }
-.waveform__bar:nth-child(6) { height: 50%; animation-delay: 0.15s; }
-.waveform__bar:nth-child(7) { height: 70%; animation-delay: 0.25s; }
-
-@keyframes waveAnim {
-  0%, 100% { transform: scaleY(1); }
-  50% { transform: scaleY(0.35); }
 }
 
 
@@ -571,18 +548,18 @@ ul {
   position: relative;
   display: inline-block;
   width: clamp(200px, 22vw, 300px);
-  aspect-ratio: 766 / 1312;
+  aspect-ratio: var(--phone-aspect-w) / var(--phone-aspect-h);
   flex-shrink: 0;
   z-index: 3;
 }
 
 .hero__phone-screen {
   position: absolute;
-  top: 1.5%;
-  left: 3.5%;
-  width: 93%;
-  height: 96.5%;
-  border-radius: 10.8% / 5.1%;
+  top: var(--phone-screen-top);
+  left: var(--phone-screen-left);
+  width: var(--phone-screen-width);
+  height: var(--phone-screen-height);
+  border-radius: var(--phone-screen-radius-x) / var(--phone-screen-radius-y);
   overflow: hidden;
   z-index: 1;
   background: #000;
@@ -599,10 +576,10 @@ ul {
 
 .hero__phone-notch {
   position: absolute;
-  top: 2.2%;
+  top: var(--phone-notch-top);
   left: 50%;
   transform: translateX(-50%);
-  width: 31%;
+  width: var(--phone-notch-width);
   aspect-ratio: 3.15 / 1;
   background: #000;
   border-radius: 999px;
@@ -981,7 +958,7 @@ ul {
 
 .wave-img--features.wave-img--left {
   left: 15%;
-  bottom: clamp(750px, 22vw, 248px);
+  bottom: clamp(108px, 22vw, 248px);
 }
 
 .wave-img--features.wave-img--right {
@@ -1034,10 +1011,13 @@ ul {
   justify-content: flex-start;
 }
 
-.feature-card--placeholder {
+.features-section__grid-spacer {
+  width: 100%;
+  max-width: 270px;
+  min-height: 148px;
+  flex-shrink: 0;
   visibility: hidden;
   pointer-events: none;
-  box-shadow: none;
 }
 
 .features-section__phone-col {
@@ -1420,7 +1400,7 @@ ul {
   .feature-card--discovery   { grid-row: auto; grid-area: discovery; }
   .feature-card--audio       { grid-row: auto; grid-area: audio; }
 
-  .feature-card--placeholder {
+  .features-section__grid-spacer {
     display: none;
   }
 
@@ -1653,9 +1633,6 @@ ul {
     justify-content: center;
   }
 
-  .story-badge--1 { top: -12px; left: 8px; }
-  .story-badge--2 { bottom: 16px; right: 8px; }
-
   /* Steps */
   .steps-section {
     padding: 64px 0;
@@ -1785,7 +1762,7 @@ ul {
   .feature-card--discovery   { grid-area: discovery; }
   .feature-card--audio       { grid-area: audio; }
 
-  .feature-card--placeholder {
+  .features-section__grid-spacer {
     display: none;
   }
 

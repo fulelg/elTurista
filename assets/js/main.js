@@ -1,8 +1,12 @@
 /* ============================================
-   EL TURISTA — MAIN JS
+   SelfTour — MAIN JS
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+  const navbar = document.getElementById('navbar');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const hamburger = document.getElementById('hamburger');
+  const closeMenu = document.getElementById('closeMenu');
 
   // ---- Store platform (mobile viewport) ----
   function updateStorePlatform() {
@@ -48,46 +52,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ---- Mobile Menu ----
-  const hamburger = document.getElementById('hamburger');
-  const closeMenu = document.getElementById('closeMenu');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileLinks = mobileMenu.querySelectorAll('a');
+  // ---- Mobile menu ----
+  if (hamburger && closeMenu && mobileMenu) {
+    const mobileLinks = mobileMenu.querySelectorAll('a');
 
-  function openMenu() {
-    mobileMenu.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    function openMenu() {
+      mobileMenu.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenuFn() {
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', openMenu);
+    closeMenu.addEventListener('click', closeMenuFn);
+    mobileLinks.forEach(link => link.addEventListener('click', closeMenuFn));
   }
-
-  function closeMenuFn() {
-    mobileMenu.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  hamburger.addEventListener('click', openMenu);
-  closeMenu.addEventListener('click', closeMenuFn);
-
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', closeMenuFn);
-  });
 
   // ---- Navbar scroll shadow ----
-  const navbar = document.getElementById('navbar');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  }, { passive: true });
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  }
 
   // ---- Active nav link on scroll ----
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll('.nav-link, .mobile-nav__link');
 
   function updateActiveLink() {
     const scrollPos = window.scrollY + 80;
+    let activeId = '';
 
     sections.forEach(section => {
       const top = section.offsetTop;
@@ -95,63 +92,51 @@ document.addEventListener('DOMContentLoaded', () => {
       const id = section.getAttribute('id');
 
       if (scrollPos >= top && scrollPos < top + height) {
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${id}`) {
-            link.classList.add('active');
-          }
-        });
+        activeId = id;
       }
+    });
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      const isActive = href === `#${activeId}`;
+      link.classList.toggle('active', isActive);
+      link.classList.toggle('mobile-nav__link--active', isActive);
     });
   }
 
-  window.addEventListener('scroll', updateActiveLink, { passive: true });
-
-  // ---- Intersection Observer for fade-in animations ----
-  const fadeEls = document.querySelectorAll('.fade-in');
-
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-    fadeEls.forEach(el => observer.observe(el));
-  } else {
-    fadeEls.forEach(el => el.classList.add('visible'));
+  if (sections.length && navLinks.length) {
+    window.addEventListener('scroll', updateActiveLink, { passive: true });
+    updateActiveLink();
   }
 
-  // ---- Stagger animation for step cards ----
+  // ---- Fade-in animations ----
   const stepCards = document.querySelectorAll('.step-card');
   stepCards.forEach((card, i) => {
     card.style.transitionDelay = `${i * 0.1}s`;
     card.classList.add('fade-in');
   });
 
-  // ---- Stagger animation for feature list items ----
   const featureItems = document.querySelectorAll('.features-list__item');
   featureItems.forEach((item, i) => {
     item.style.transitionDelay = `${i * 0.08}s`;
     item.classList.add('fade-in');
   });
 
-  // Re-run observer for newly added fade-in elements
-  if ('IntersectionObserver' in window) {
-    const allFadeEls = document.querySelectorAll('.fade-in:not(.visible)');
-    const observer2 = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer2.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  const fadeEls = document.querySelectorAll('.fade-in:not(.visible)');
+  if (fadeEls.length) {
+    if ('IntersectionObserver' in window) {
+      const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            fadeObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-    allFadeEls.forEach(el => observer2.observe(el));
+      fadeEls.forEach(el => fadeObserver.observe(el));
+    } else {
+      fadeEls.forEach(el => el.classList.add('visible'));
+    }
   }
-
 });
