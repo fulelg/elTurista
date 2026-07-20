@@ -563,7 +563,7 @@ ul {
   max-width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  min-height: clamp(360px, 48vw, 500px);
+  min-height: clamp(320px, 42vw, 440px);
   z-index: 3;
 }
 
@@ -571,28 +571,75 @@ ul {
   position: relative;
   display: inline-block;
   width: clamp(200px, 22vw, 300px);
+  aspect-ratio: 766 / 1312;
   flex-shrink: 0;
   z-index: 3;
 }
 
-.hero__phone-video {
+.hero__phone-screen {
   position: absolute;
-  top: 1.6%;
-  left: 5%;
-  width: 90%;
+  top: 1.5%;
+  left: 3.5%;
+  width: 93%;
   height: 96.5%;
+  border-radius: 10.8% / 5.1%;
+  overflow: hidden;
+  z-index: 1;
+  background: #000;
+  isolation: isolate;
+}
+
+.hero__phone-video {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 9% / 5%;
-  z-index: 0;
+  object-position: center top;
+}
+
+.hero__phone-notch {
+  position: absolute;
+  top: 2.2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 31%;
+  aspect-ratio: 3.15 / 1;
+  background: #000;
+  border-radius: 999px;
+  z-index: 4;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10%;
+  box-sizing: border-box;
+}
+
+.hero__phone-notch-lens {
+  width: 17%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #3d3d5c 0%, #141428 45%, #050508 100%);
+  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.15);
 }
 
 .hero__phone-frame {
-  position: relative;
-  display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
-  z-index: 1;
+  height: 100%;
+  object-fit: fill;
+  z-index: 3;
   pointer-events: none;
+  -webkit-mask: url(#hero-phone-bezel-mask);
+  mask: url(#hero-phone-bezel-mask);
+}
+
+.hero__phone-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 .wave-img {
@@ -1564,7 +1611,7 @@ ul {
     max-width: 100%;
     margin-left: 0;
     margin-right: 0;
-    min-height: clamp(280px, 68vw, 360px);
+    min-height: clamp(250px, 58vw, 320px);
   }
 
   .wave-img {

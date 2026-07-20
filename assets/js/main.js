@@ -30,6 +30,24 @@ document.addEventListener('DOMContentLoaded', () => {
   updateStorePlatform();
   window.matchMedia('(max-width: 767px)').addEventListener('change', updateStorePlatform);
 
+  // ---- Hero video autoplay fallback ----
+  const heroVideo = document.querySelector('.hero__phone-video');
+  if (heroVideo) {
+    heroVideo.muted = true;
+    const playHeroVideo = () => {
+      const promise = heroVideo.play();
+      if (promise && typeof promise.catch === 'function') {
+        promise.catch(() => {});
+      }
+    };
+
+    playHeroVideo();
+    heroVideo.addEventListener('loadeddata', playHeroVideo, { once: true });
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) playHeroVideo();
+    });
+  }
+
   // ---- Mobile Menu ----
   const hamburger = document.getElementById('hamburger');
   const closeMenu = document.getElementById('closeMenu');
