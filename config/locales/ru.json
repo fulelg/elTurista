@@ -29,9 +29,9 @@
     "googlePlay": "Google Play"
   },
   "hero": {
-    "titleLine1": "Your AI-powered personal",
-    "titleLine2": "tour guide",
-    "subtitle": "Discover stories behind nearby sights with your AI-powered personal tour guide. No searching online, planning routes, or booking tours."
+   "titleLine1": "Ваш персональный",
+    "titleLine2": "ИИ-гид SelfTour",
+    "subtitle": "Открывайте истории и интересные факты о достопримечательностях рядом с вами с помощью персонального ИИ-гида. Без поиска в интернете, планирования маршрутов и бронирования экскурсий."
   },
   "city": {
     "title": "Just walk. SelfTour app does the rest",

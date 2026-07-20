@@ -161,7 +161,6 @@ ul {
   border-radius: var(--radius-pill);
   padding: 10px 22px;
   transition: background 0.2s, transform 0.15s;
-  white-space: nowrap;
 }
 
 .btn-cta:hover {
@@ -228,7 +227,6 @@ ul {
 }
 
 .title-line {
-  white-space: nowrap;
   font-size: inherit;
 }
 

@@ -1,11 +1,112 @@
 /**
- * SelfTour — runtime copy from config/locales/en.json + config/site.json
+ * SelfTour — runtime i18n
+ *
+ * Locale resolution (first match wins):
+ * 1. ?lang=xx in the URL (optional override for testing)
+ * 2. navigator.languages / navigator.language
+ * 3. fallback: en
+ *
+ * Add a new language by placing config/locales/{code}.json
+ * (e.g. ru.json, de.json, pt-BR.json). Codes are matched case-insensitively;
+ * for tags like ru-RU the loader tries ru-ru.json then ru.json.
  */
 (function () {
-  const LOCALE = 'en';
+  const DEFAULT_LOCALE = 'en';
+  const LOCALE_PATH = 'config/locales';
 
   function get(obj, path) {
     return path.split('.').reduce((acc, key) => (acc == null ? undefined : acc[key]), obj);
+  }
+
+  function normalizeLocale(tag) {
+    if (!tag || typeof tag !== 'string') return null;
+    const normalized = tag.trim().replace(/_/g, '-').toLowerCase();
+    return /^[a-z]{2,3}(-[a-z0-9]{2,8})*$/i.test(normalized) ? normalized : null;
+  }
+
+  function expandLocale(tag) {
+    const code = normalizeLocale(tag);
+    if (!code) return [];
+    const base = code.split('-')[0];
+    // Prefer base file (ru.json) before regional (ru-ru.json)
+    return base && base !== code ? [base, code] : [code];
+  }
+
+  function browserLocaleCandidates() {
+    const raw = [];
+
+    // Primary browser UI language first (not the full Accept-Language list,
+    // where "en" often appears early and would otherwise win over "ru").
+    if (navigator.language) raw.push(navigator.language);
+    if (navigator.userLanguage) raw.push(navigator.userLanguage);
+
+    try {
+      const intl = Intl.DateTimeFormat().resolvedOptions().locale;
+      if (intl) raw.push(intl);
+    } catch (_) { /* ignore */ }
+
+    if (Array.isArray(navigator.languages)) raw.push(...navigator.languages);
+
+    const candidates = [];
+    const seen = new Set();
+    raw.forEach(tag => {
+      expandLocale(tag).forEach(code => {
+        if (!seen.has(code)) {
+          seen.add(code);
+          candidates.push(code);
+        }
+      });
+    });
+    return candidates;
+  }
+
+  function preferredLocaleCandidates() {
+    const params = new URLSearchParams(window.location.search);
+    const fromUrl = normalizeLocale(params.get('lang'));
+    const seen = new Set();
+    const candidates = [];
+
+    const pushAll = tags => {
+      tags.forEach(code => {
+        if (!seen.has(code)) {
+          seen.add(code);
+          candidates.push(code);
+        }
+      });
+    };
+
+    if (fromUrl) pushAll(expandLocale(fromUrl));
+    pushAll(browserLocaleCandidates());
+    pushAll([DEFAULT_LOCALE]);
+    return candidates;
+  }
+
+  function isLocaleMessages(data) {
+    return Boolean(data && typeof data === 'object' && data.nav && data.brand);
+  }
+
+  async function fetchLocaleJson(base, code) {
+    try {
+      const res = await fetch(`${base}${LOCALE_PATH}/${code}.json`);
+      if (!res.ok) return null;
+      const data = await res.json();
+      return isLocaleMessages(data) ? data : null;
+    } catch {
+      return null;
+    }
+  }
+
+  async function resolveLocale(base) {
+    const candidates = preferredLocaleCandidates();
+    for (const code of candidates) {
+      const messages = await fetchLocaleJson(base, code);
+      if (messages) {
+        // Keep public locale as base language when ru-ru matched via ru.json
+        const locale = code.split('-')[0] || code;
+        return { locale, messages, matchedFile: code };
+      }
+    }
+    throw new Error('Failed to load any locale copy');
   }
 
   function applyText(root, messages) {
@@ -79,6 +180,24 @@
     if (canonical) canonical.setAttribute('href', site.links.canonical);
   }
 
+  function applyDocument(locale, messages, site) {
+    document.documentElement.lang = locale;
+    document.documentElement.dataset.i18nReady = 'true';
+    document.documentElement.dataset.locale = locale;
+
+    applyMeta(messages, site);
+    applyText(document, messages);
+    applySiteLinks(document, site);
+
+    window.SelfTourConfig = site;
+    window.SelfTourLocale = locale;
+    window.SelfTourMessages = messages;
+
+    document.dispatchEvent(new CustomEvent('i18n:ready', {
+      detail: { locale, messages, site }
+    }));
+  }
+
   async function init() {
     const base = document.documentElement.dataset.base || '';
     const site = await fetch(`${base}config/site.json`).then(r => {
@@ -86,24 +205,15 @@
       return r.json();
     });
 
-    const messages = await fetch(`${base}config/locales/${LOCALE}.json`).then(r => {
-      if (!r.ok) throw new Error('Failed to load locale copy');
-      return r.json();
-    });
-
-    document.documentElement.lang = LOCALE;
-    document.documentElement.dataset.i18nReady = 'true';
-
-    applyMeta(messages, site);
-    applyText(document, messages);
-    applySiteLinks(document, site);
-
-    window.SelfTourConfig = site;
-    window.SelfTourLocale = LOCALE;
-    window.SelfTourMessages = messages;
-
-    document.dispatchEvent(new CustomEvent('i18n:ready', { detail: { locale: LOCALE, messages, site } }));
+    const { locale, messages } = await resolveLocale(base);
+    applyDocument(locale, messages, site);
+    return { locale, messages, site };
   }
 
-  window.SelfTourI18n = { init, get };
+  window.SelfTourI18n = {
+    init,
+    get,
+    resolveLocale,
+    DEFAULT_LOCALE
+  };
 })();
