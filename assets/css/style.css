@@ -123,21 +123,17 @@ ul {
 .logo {
   display: flex;
   align-items: center;
-  gap: 6px;
-}
-
-.logo__text {
-  font-family: var(--font-body);
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--white);
-  letter-spacing: -0.3px;
-}
-
-.logo--dark .logo__text { color: var(--dark); }
-
-.logo__icon {
   flex-shrink: 0;
+}
+
+.logo__img {
+  display: block;
+  height: 19px;
+  width: auto;
+}
+
+.logo__img--light {
+  display: none;
 }
 
 /* ---- BUTTONS ---- */
@@ -322,7 +318,7 @@ ul {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 20px;
 }
 
 .nav-link {
@@ -572,10 +568,31 @@ ul {
 }
 
 .hero__phone {
-  width: clamp(200px, 22vw, 300px);
   position: relative;
-  z-index: 3;
+  display: inline-block;
+  width: clamp(200px, 22vw, 300px);
   flex-shrink: 0;
+  z-index: 3;
+}
+
+.hero__phone-video {
+  position: absolute;
+  top: 1.6%;
+  left: 5%;
+  width: 90%;
+  height: 96.5%;
+  object-fit: cover;
+  border-radius: 9% / 5%;
+  z-index: 0;
+}
+
+.hero__phone-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .wave-img {
@@ -1428,28 +1445,20 @@ ul {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   }
 
-  .navbar .logo--dark .logo__text {
-    color: var(--white);
+  .navbar:not(.scrolled) .logo__img--dark {
+    display: none;
   }
 
-  .navbar .logo__icon circle {
-    fill: #ffffff;
+  .navbar:not(.scrolled) .logo__img--light {
+    display: block;
   }
 
-  .navbar .logo__icon path {
-    fill: #508aff;
+  .navbar.scrolled .logo__img--dark {
+    display: block;
   }
 
-  .navbar.scrolled .logo--dark .logo__text {
-    color: var(--dark);
-  }
-
-  .navbar.scrolled .logo__icon circle {
-    fill: #1765FF;
-  }
-
-  .navbar.scrolled .logo__icon path {
-    fill: #ffffff;
+  .navbar.scrolled .logo__img--light {
+    display: none;
   }
 
   .navbar__inner {
@@ -1848,13 +1857,11 @@ ul {
   }
 
   .footer__brand .logo {
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 10px;
+    justify-content: center;
   }
 
-  .footer__brand .logo__text {
-    font-size: 20px;
+  .footer__brand .logo__img {
+    height: 22px;
   }
 
   .footer__tagline {

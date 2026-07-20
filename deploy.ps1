@@ -24,7 +24,7 @@ Write-Host "GitHub user: $owner"
 
 # Bust browser cache for CSS/JS on each deploy
 $cacheVersion = Get-Date -Format "yyyyMMddHHmm"
-$htmlFiles = @("index.html", "privacy-policy.html")
+$htmlFiles = @("index.html", "privacy-policy.html", "terms-of-use.html")
 foreach ($path in $htmlFiles) {
   if (-not (Test-Path $path)) { continue }
   $content = Get-Content $path -Raw
@@ -35,7 +35,7 @@ foreach ($path in $htmlFiles) {
 }
 Write-Host "Asset cache version: $cacheVersion"
 
-git add index.html privacy-policy.html 2>$null
+git add index.html privacy-policy.html terms-of-use.html 2>$null
 $pending = git diff --cached --name-only
 if ($pending) {
   git commit -m "Bump asset cache version to $cacheVersion"
