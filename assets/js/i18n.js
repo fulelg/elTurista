@@ -3,16 +3,17 @@
  *
  * Locale resolution (first match wins):
  * 1. ?lang=xx in the URL (optional override for testing)
- * 2. navigator.languages / navigator.language
+ * 2. navigator.language / related browser locales
  * 3. fallback: en
  *
- * Add a new language by placing config/locales/{code}.json
- * (e.g. ru.json, de.json, pt-BR.json). Codes are matched case-insensitively;
- * for tags like ru-RU the loader tries ru-ru.json then ru.json.
+ * Available languages are listed in config/locales/locales.json.
+ * To add a language: create config/locales/{code}.json and add "{code}"
+ * to locales.json. Only listed files are fetched (no 404 noise).
  */
 (function () {
   const DEFAULT_LOCALE = 'en';
   const LOCALE_PATH = 'config/locales';
+  const LOCALES_MANIFEST = `${LOCALE_PATH}/locales.json`;
 
   function get(obj, path) {
     return path.split('.').reduce((acc, key) => (acc == null ? undefined : acc[key]), obj);
@@ -28,15 +29,12 @@
     const code = normalizeLocale(tag);
     if (!code) return [];
     const base = code.split('-')[0];
-    // Prefer base file (ru.json) before regional (ru-ru.json)
     return base && base !== code ? [base, code] : [code];
   }
 
   function browserLocaleCandidates() {
     const raw = [];
 
-    // Primary browser UI language first (not the full Accept-Language list,
-    // where "en" often appears early and would otherwise win over "ru").
     if (navigator.language) raw.push(navigator.language);
     if (navigator.userLanguage) raw.push(navigator.userLanguage);
 
@@ -85,6 +83,28 @@
     return Boolean(data && typeof data === 'object' && data.nav && data.brand);
   }
 
+  async function loadAvailableLocales(base) {
+    try {
+      const res = await fetch(`${base}${LOCALES_MANIFEST}`);
+      if (!res.ok) return [DEFAULT_LOCALE];
+      const data = await res.json();
+      const list = Array.isArray(data) ? data : data?.locales;
+      const codes = (Array.isArray(list) ? list : [])
+        .map(normalizeLocale)
+        .filter(Boolean);
+      return codes.length ? codes : [DEFAULT_LOCALE];
+    } catch {
+      return [DEFAULT_LOCALE];
+    }
+  }
+
+  function matchAvailableLocale(candidate, availableSet) {
+    if (availableSet.has(candidate)) return candidate;
+    const base = candidate.split('-')[0];
+    if (base && availableSet.has(base)) return base;
+    return null;
+  }
+
   async function fetchLocaleJson(base, code) {
     try {
       const res = await fetch(`${base}${LOCALE_PATH}/${code}.json`);
@@ -97,15 +117,26 @@
   }
 
   async function resolveLocale(base) {
-    const candidates = preferredLocaleCandidates();
-    for (const code of candidates) {
+    const available = await loadAvailableLocales(base);
+    const availableSet = new Set(available);
+    const tried = new Set();
+
+    for (const candidate of preferredLocaleCandidates()) {
+      const code = matchAvailableLocale(candidate, availableSet);
+      if (!code || tried.has(code)) continue;
+      tried.add(code);
+
       const messages = await fetchLocaleJson(base, code);
       if (messages) {
-        // Keep public locale as base language when ru-ru matched via ru.json
-        const locale = code.split('-')[0] || code;
-        return { locale, messages, matchedFile: code };
+        return { locale: code.split('-')[0] || code, messages };
       }
     }
+
+    if (!tried.has(DEFAULT_LOCALE)) {
+      const messages = await fetchLocaleJson(base, DEFAULT_LOCALE);
+      if (messages) return { locale: DEFAULT_LOCALE, messages };
+    }
+
     throw new Error('Failed to load any locale copy');
   }
 
