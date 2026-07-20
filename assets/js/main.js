@@ -2,7 +2,15 @@
    SelfTour — MAIN JS
    ============================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  if (window.SelfTourI18n) {
+    try {
+      await SelfTourI18n.init();
+    } catch (err) {
+      console.warn('i18n init failed', err);
+    }
+  }
+
   const navbar = document.getElementById('navbar');
   const mobileMenu = document.getElementById('mobileMenu');
   const hamburger = document.getElementById('hamburger');

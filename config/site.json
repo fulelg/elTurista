@@ -1,0 +1,23 @@
+{
+  "brand": {
+    "name": "SelfTour",
+    "domain": "https://selftour.app",
+    "email": "support@selftour.app",
+    "copyrightYear": 2026
+  },
+  "links": {
+    "canonical": "https://selftour.app/",
+    "ogImage": "https://selftour.app/assets/images/og-image.webp",
+    "appStore": "https://apps.apple.com/app/id6756697981",
+    "googlePlay": "#",
+    "privacy": "privacy-policy.html",
+    "terms": "terms-of-use.html",
+    "home": "index.html",
+    "tiktok": "https://www.tiktok.com/@selftour.app",
+    "instagram": "https://www.instagram.com/selftour.app/",
+    "youtube": "https://www.youtube.com/@ElTuristaTripIdeas"
+  },
+  "analytics": {
+    "gaId": "G-LGM8HV7LWN"
+  }
+}

@@ -30,6 +30,7 @@ foreach ($path in $htmlFiles) {
   $content = Get-Content $path -Raw
   $content = $content -replace 'assets/css/style\.css(\?v=[^"]*)?', "assets/css/style.css?v=$cacheVersion"
   $content = $content -replace 'assets/css/legal\.css(\?v=[^"]*)?', "assets/css/legal.css?v=$cacheVersion"
+  $content = $content -replace 'assets/js/i18n\.js(\?v=[^"]*)?', "assets/js/i18n.js?v=$cacheVersion"
   $content = $content -replace 'assets/js/main\.js(\?v=[^"]*)?', "assets/js/main.js?v=$cacheVersion"
   [System.IO.File]::WriteAllText((Join-Path (Get-Location) $path), $content)
 }

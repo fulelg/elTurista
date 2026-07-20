@@ -1,0 +1,145 @@
+{
+  "brand": {
+    "name": "SelfTour"
+  },
+  "meta": {
+    "title": "SelfTour – Your AI-powered personal tour guide",
+    "description": "Discover stories behind nearby sights with your AI-powered personal tour guide. No searching online, planning routes, or booking tours.",
+    "ogDescription": "Discover stories behind nearby sights without searching online, planning routes, or booking tours."
+  },
+  "nav": {
+    "home": "Home",
+    "experience": "Experience",
+    "benefits": "Benefits",
+    "howItWorks": "How It Works",
+    "features": "Features",
+    "download": "Download",
+    "getApp": "Get the App"
+  },
+  "a11y": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "heroVideo": "SelfTour app demo",
+    "socialTikTok": "TikTok",
+    "socialInstagram": "Instagram",
+    "socialYouTube": "YouTube"
+  },
+  "stores": {
+    "appStore": "App Store",
+    "googlePlay": "Google Play"
+  },
+  "hero": {
+    "title": "<span class=\"title-line\">Every Street Has a Story.</span><br>Hear It Now.",
+    "subtitle": "The AI-powered audio guide that turns your city map<br class=\"desktop-only\"> into a living museum"
+  },
+  "city": {
+    "title": "City Exploration with Audio-Guide",
+    "body": "Turn on Guide mode and just walk from sight to sight. As you approach any landmark, SelfTour automatically detects it, reveals its history, and begins the AI audio story. Enjoy the city at your own pace — the app does all the searching for you.",
+    "note": "*Works beautifully <b>with both headphones and your phone's speaker</b>",
+    "imageAlt": "City exploration illustration"
+  },
+  "benefits": {
+    "badge": "Benefits",
+    "title": "Why Travelers Choose SelfTour",
+    "subtitle": "Everything you need to explore every city with confidence",
+    "cards": {
+      "personalGuide": {
+        "title": "Personal Guide",
+        "desc": "Have a personal sights guide with you wherever and whenever you travel"
+      },
+      "instantKnowledge": {
+        "title": "Instant Knowledge",
+        "desc": "Discover the stories behind sights without searching online - each story is crafted for you on demand"
+      },
+      "freedom": {
+        "title": "Freedom to Explore",
+        "desc": "Explore whenever you want without planning routes, booking tours, or following schedules"
+      }
+    }
+  },
+  "steps": {
+    "badge": "3 Simple Steps",
+    "title": "<span class=\"title-line\">Your Audio-Guide, Always On</span>",
+    "subtitle": "No tour guide. No heavy guidebook. No pre-planned route. Just open the app, put on your earphones, and let the city speak to you — one story at a time.",
+    "items": {
+      "1": {
+        "title": "Turn on Guide Mode",
+        "desc": "Activate the Mode and let the app track your route as you walk",
+        "imageAlt": "Turn on Guide Mode"
+      },
+      "2": {
+        "title": "Get Closer to Sights",
+        "desc": "Approach your sights of interest. The app instantly detects them",
+        "imageAlt": "Get Closer to Sights"
+      },
+      "3": {
+        "title": "Listen & Explore",
+        "desc": "High-quality AI stories play automatically. Just look around",
+        "imageAlt": "Listen & Explore"
+      }
+    }
+  },
+  "features": {
+    "badge": "Built for Explorers",
+    "title": "Key Features",
+    "subtitle": "The features that turn a simple walk into a journey you'll never forget",
+    "phoneAlt": "SelfTour app map view",
+    "cards": {
+      "storyteller": {
+        "title": "AI Storyteller:",
+        "desc": "Not just facts, but engaging stories generated in real-time",
+        "iconAlt": "AI Storyteller"
+      },
+      "language": {
+        "title": "Multi-language:",
+        "desc": "Your personal guide speaks your language",
+        "iconAlt": "Multi-language"
+      },
+      "discovery": {
+        "title": "Instant Discovery:",
+        "desc": "No pre-planning. Open the app and discover stories on the go",
+        "iconAlt": "Instant Discovery"
+      },
+      "audio": {
+        "title": "Immersive Audio:",
+        "desc": "High-quality voiceovers that blend perfectly with your walk",
+        "iconAlt": "Immersive Audio"
+      }
+    }
+  },
+  "download": {
+    "title": "Download SelfTour",
+    "body": "Your next walk will never be the same. Available now on iOS and Android — free to download, free to explore.",
+    "phoneAlt": "SelfTour app",
+    "colosseumAlt": "Colosseum illustration"
+  },
+  "footer": {
+    "tagline": "Your AI-powered audio guide.<br>Turn any city into a living museum",
+    "product": "Product",
+    "legal": "Legal",
+    "support": "Support",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "faq": "FAQ",
+    "contact": "Contact Us",
+    "copyright": "© 2026 SelfTour. All rights reserved."
+  },
+  "mobile": {
+    "followUs": "Follow us"
+  },
+  "legal": {
+    "backLink": "← Back to SelfTour",
+    "privacy": {
+      "title": "Privacy Policy — SelfTour",
+      "heading": "Privacy Policy",
+      "updated": "Last updated: July, 2026",
+      "body": "<p>Welcome to SelfTour (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website <a href=\"https://selftour.app\">https://selftour.app</a> and use the SelfTour mobile application.</p><h2>1. Information We Collect</h2><ul><li><strong>Location Data:</strong> To provide the core &ldquo;Guide Mode&rdquo; functionality, the app collects your device&rsquo;s precise location data (GPS) even when the app is running in the background. You can disable this in your device settings, but the app will not function as intended.</li><li><strong>Usage Data &amp; Cookies:</strong> We automatically collect standard analytical data (including IP address, device type, operating system, and general app usage statistics) via trusted third-party analytics and performance tools to improve our service. We also use cookies and similar tracking technologies to analyze website traffic and enhance your browsing experience.</li><li><strong>Account Data:</strong> If you choose to create an account, we may collect your email address and name.</li></ul><h2>2. How We Use Your Information</h2><p>We use the collected data strictly to:</p><ul><li>Provide, operate, and maintain the AI audio guide services.</li><li>Track app performance, monitor crashes, and fix technical bugs.</li><li>Send you essential technical updates and promotional materials (only if you have opted in).</li></ul><h2>3. Data Sharing and Third Parties</h2><p>We do not sell, rent, or trade your personal data. We only share information with trusted third-party service providers (such as analytics, cloud hosting, and database services) that are necessary to operate the app, comply with legal obligations, or protect our rights.</p><h2>4. Data Security &amp; Retention</h2><p>We implement standard industry security measures to protect your data. However, no electronic transmission over the internet or storage system is 100% secure, and we cannot guarantee absolute security. We retain your data only as long as necessary to fulfill the purposes outlined in this policy.</p><h2>5. Your Rights (GDPR &amp; CCPA)</h2><p>Depending on your geographical location, you have the right to access, correct, or request the deletion of your personal data collected by the app. To exercise any of these rights, please contact us directly at <a href=\"mailto:support@selftour.app\">support@selftour.app</a>.</p><h2>6. Contact Us</h2><p>If you have any questions or concerns regarding this Privacy Policy, please contact us at:</p><ul><li>Email: <a href=\"mailto:support@selftour.app\">support@selftour.app</a></li><li>Website: <a href=\"https://selftour.app\">https://selftour.app</a></li></ul>"
+    },
+    "terms": {
+      "title": "Terms of Use — SelfTour",
+      "heading": "Terms of Use",
+      "updated": "Last updated: July, 2026",
+      "body": "<p>This Agreement is a legally binding contract between the User (&ldquo;you&rdquo;) and SelfTour (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;). Please read these Terms of Use carefully before downloading or using the SelfTour mobile application and visiting our website <a href=\"https://selftour.app\">https://selftour.app</a>.</p><h2>1. Acceptance of Terms</h2><p>By downloading, installing, accessing, or using the SelfTour app, you agree to be bound by these Terms of Use. If you do not agree to these Terms, you must stop using our services and delete the application from your device.</p><h2>2. Disclaimer of AI Content</h2><p>SelfTour utilizes artificial intelligence (AI) technologies to generate automated audio excursions, localized commentary, and historical facts. All content within the app is provided on an &ldquo;as-is&rdquo; and &ldquo;as-available&rdquo; basis.</p><p>We make no warranties, express or implied, regarding the accuracy, completeness, historical truth, or reliability of any information provided by the AI audio guide. The content is provided for general informational and entertainment purposes only.</p><h2>3. User Safety and Limitation of Liability</h2><ul><li><strong>Awareness and Safety:</strong> When using the app&rsquo;s &ldquo;Guide Mode&rdquo; with headphones or earbuds, you remain fully and solely responsible for your own safety. You must maintain full awareness of your physical surroundings, pedestrian traffic, vehicles, and strictly comply with local safety laws and regulations.</li><li><strong>Limitation of Liability:</strong> To the maximum extent permitted by applicable law, SelfTour, its founders, partners, and employees shall not be liable for any direct, indirect, incidental, special, or consequential damages. This includes, but is not limited to, physical injuries, bodily harm, traffic accidents, lost or stolen personal property, or user dissatisfaction with the content resulting directly or indirectly from the use of the app.</li></ul><h2>4. Intellectual Property</h2><p>All application designs, user interfaces, logos, software, text, graphics, branding elements, and AI-generated audio tracks are the exclusive intellectual property of SelfTour and are protected by international copyright and trademark laws. You may not copy, reverse-engineer, modify, distribute, or reuse our content without prior explicit written permission.</p><h2>5. Termination of Service</h2><p>We reserve the right, without prior notice and at our sole discretion, to terminate your user license, delete your account, or block your access to the application if we determine that you have violated these Terms of Use or used the service inappropriately.</p><h2>6. Changes to These Terms</h2><p>We may update these Terms of Use from time to time. If we make changes, we will update the &ldquo;Last updated&rdquo; date at the top of this page. By continuing to use the SelfTour app after any changes become effective, you agree to the revised Terms.</p><h2>7. Contact Us</h2><p>If you have any questions, feedback, or legal inquiries regarding these Terms, please contact us at:</p><ul><li>Email: <a href=\"mailto:support@selftour.app\">support@selftour.app</a></li><li>Website: <a href=\"https://selftour.app\">https://selftour.app</a></li></ul>"
+    }
+  }
+}
