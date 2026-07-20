@@ -29,18 +29,18 @@
     "googlePlay": "Google Play"
   },
   "hero": {
-    "title": "<span class=\"title-line\">Every Street Has a Story.</span><br>Hear It Now.",
-    "subtitle": "The AI-powered audio guide that turns your city map<br class=\"desktop-only\"> into a living museum"
+    "title": "<span class=\"title-line\"> Your AI-powered personal</span><br>tour guide",
+    "subtitle": "Discover stories behind nearby sights with your AI-powered personal tour guide. No searching online, planning routes, or booking tours."
   },
   "city": {
-    "title": "City Exploration with Audio-Guide",
-    "body": "Turn on Guide mode and just walk from sight to sight. As you approach any landmark, SelfTour automatically detects it, reveals its history, and begins the AI audio story. Enjoy the city at your own pace — the app does all the searching for you.",
-    "note": "*Works beautifully <b>with both headphones and your phone's speaker</b>",
+    "title": "Just walk. SelfTour app does the rest",
+    "body": "Explore the city naturally while the app takes care of the storytelling. As you walk, nearby sights are automatically brought to life through immersive audio stories, turning every walk into a guided experience",
+    "note": "*Works <b>with both headphones and your phone's speaker</b>",
     "imageAlt": "City exploration illustration"
   },
   "benefits": {
     "badge": "Benefits",
-    "title": "Why Travelers Choose SelfTour",
+    "title": "Why Travelers Choose SelfTour app",
     "subtitle": "Everything you need to explore every city with confidence",
     "cards": {
       "personalGuide": {
@@ -59,50 +59,50 @@
   },
   "steps": {
     "badge": "3 Simple Steps",
-    "title": "<span class=\"title-line\">Your Audio-Guide, Always On</span>",
-    "subtitle": "No tour guide. No heavy guidebook. No pre-planned route. Just open the app, put on your earphones, and let the city speak to you — one story at a time.",
+    "title": "<span class=\"title-line\">How It Works</span>",
+    "subtitle": "Start exploring in seconds. Just open SelfTour app, begin your walk, and let your personal guide bring every nearby sight to life",
     "items": {
       "1": {
-        "title": "Turn on Guide Mode",
-        "desc": "Activate the Mode and let the app track your route as you walk",
+        "title": "Open",
+        "desc": "Open SelfTour app and start your journey  ",
         "imageAlt": "Turn on Guide Mode"
       },
       "2": {
-        "title": "Get Closer to Sights",
-        "desc": "Approach your sights of interest. The app instantly detects them",
+        "title": "Explore",
+        "desc": "  Walk naturally while nearby sights are detected automatically",
         "imageAlt": "Get Closer to Sights"
       },
       "3": {
-        "title": "Listen & Explore",
-        "desc": "High-quality AI stories play automatically. Just look around",
+        "title": "Listen",
+        "desc": "Enjoy immersive AI-crafted audio stories as you discover the city",
         "imageAlt": "Listen & Explore"
       }
     }
   },
   "features": {
     "badge": "Built for Explorers",
-    "title": "Key Features",
-    "subtitle": "The features that turn a simple walk into a journey you'll never forget",
+    "title": "Everything You Need to Explore Freely  ",
+    "subtitle": "Designed to make every walk simpler, smarter, and more enjoyable ",
     "phoneAlt": "SelfTour app map view",
     "cards": {
       "storyteller": {
         "title": "AI Storyteller:",
-        "desc": "Not just facts, but engaging stories generated in real-time",
+        "desc": "Engaging audio stories generated in real time for every sight you discover",
         "iconAlt": "AI Storyteller"
       },
       "language": {
         "title": "Multi-language:",
-        "desc": "Your personal guide speaks your language",
+        "desc": "Explore in your own language, SelfTour app supports 57 languages",
         "iconAlt": "Multi-language"
       },
       "discovery": {
         "title": "Instant Discovery:",
-        "desc": "No pre-planning. Open the app and discover stories on the go",
+        "desc": "Nearby sights are ready to discover the moment you start walking",
         "iconAlt": "Instant Discovery"
       },
       "audio": {
-        "title": "Immersive Audio:",
-        "desc": "High-quality voiceovers that blend perfectly with your walk",
+        "title": "Freedom to Explore:",
+        "desc": "Explore at your own pace without fixed routes or tour groups",
         "iconAlt": "Immersive Audio"
       }
     }
@@ -114,7 +114,7 @@
     "colosseumAlt": "Colosseum illustration"
   },
   "footer": {
-    "tagline": "Your AI-powered audio guide.<br>Turn any city into a living museum",
+    "tagline": "Your AI-powered audio guide.",
     "product": "Product",
     "legal": "Legal",
     "support": "Support",
