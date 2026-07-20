@@ -114,14 +114,12 @@
     "colosseumAlt": "Colosseum illustration"
   },
   "footer": {
-    "tagline": "Your AI-powered audio guide.",
+    "tagline": "Your AI-powered personal tour guide.",
     "product": "Product",
     "legal": "Legal",
     "support": "Support",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
-    "faq": "FAQ",
-    "contact": "Contact Us",
     "copyright": "© 2026 SelfTour. All rights reserved."
   },
   "mobile": {

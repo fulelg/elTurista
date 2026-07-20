@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=202607202320">
+  <link rel="stylesheet" href="assets/css/style.css?v=202607202460">
 </head>
 <body>
 
@@ -43,7 +43,7 @@
     <div class="navbar__inner">
       <a href="#home" class="logo">
         <img src="assets/images/logo-selftour.svg" alt="" class="logo__img logo__img--dark" width="94" height="19" data-i18n-alt="brand.name">
-        <img src="assets/images/logo-selftour-white.svg" alt="" class="logo__img logo__img--light" width="94" height="19" aria-hidden="true">
+        <img src="assets/images/logo-selftour-nav.svg" alt="" class="logo__img logo__img--light" width="158" height="32" aria-hidden="true">
       </a>
 
       <nav class="nav-links">
@@ -54,7 +54,7 @@
         <a href="#features" class="nav-link" data-i18n="nav.features">Features</a>
       </nav>
 
-      <a href="#download" class="btn-cta" data-i18n="nav.getApp">Get the App</a>
+      <a href="#download" class="btn-cta btn-cta--nav" data-i18n="nav.getApp">Get the App</a>
 
       <button class="hamburger" id="hamburger" data-i18n-aria="a11y.openMenu" aria-label="Open menu">
         <span></span>
@@ -72,7 +72,7 @@
           <img src="assets/images/logo-selftour.svg" alt="" class="logo__img" width="94" height="19" data-i18n-alt="brand.name">
         </a>
         <button class="close-btn" id="closeMenu" data-i18n-aria="a11y.closeMenu" aria-label="Close menu">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="#9A9A9A" stroke-width="2" stroke-linecap="round"/></svg>
         </button>
       </div>
 
@@ -85,31 +85,32 @@
       </nav>
 
       <div class="mobile-menu__bottom">
-        <a href="#" class="btn-store btn-store--black btn-store--full" data-store="ios" data-config-href="appStore" target="_blank" rel="noopener noreferrer">
-          <img src="assets/images/Apple-w.svg" alt="" class="btn-store__icon" data-i18n-alt="stores.appStore">
-          <span data-i18n="stores.appStore">App Store</span>
-        </a>
-        <a href="#" class="btn-store btn-store--black btn-store--full" data-store="android" data-config-href="googlePlay">
-          <img src="assets/images/playstore.svg" alt="" class="btn-store__icon" data-i18n-alt="stores.googlePlay">
-          <span data-i18n="stores.googlePlay">Google Play</span>
-        </a>
+        <div class="mobile-menu__stores">
+          <a href="#" class="btn-store btn-store--black btn-store--menu" data-store="ios" data-config-href="appStore" target="_blank" rel="noopener noreferrer">
+            <img src="assets/images/Apple-w.svg" alt="" class="btn-store__icon" data-i18n-alt="stores.appStore">
+            <span data-i18n="stores.appStore">App Store</span>
+          </a>
+          <a href="#" class="btn-store btn-store--black btn-store--menu" data-store="android" data-config-href="googlePlay">
+            <img src="assets/images/playstore.svg" alt="" class="btn-store__icon" data-i18n-alt="stores.googlePlay">
+            <span data-i18n="stores.googlePlay">Google Play</span>
+          </a>
+        </div>
         <div class="mobile-menu__social">
           <p class="mobile-menu__social-label" data-i18n="mobile.followUs">Follow us</p>
-          <div class="social-links">
-            <a href="#" class="social-link" data-config-href="tiktok" data-i18n-aria="a11y.socialTikTok" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.03a8.16 8.16 0 004.77 1.52V7.11a4.85 4.85 0 01-1-.42z"/></svg>
+          <div class="social-links social-links--menu">
+            <a href="#" class="social-link social-link--menu" data-config-href="tiktok" data-i18n-aria="a11y.socialTikTok" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+              <img src="assets/images/tt.svg" alt="" class="social-link__icon" width="20" height="20">
             </a>
-            <a href="#" class="social-link" data-config-href="instagram" data-i18n-aria="a11y.socialInstagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <a href="#" class="social-link social-link--menu" data-config-href="instagram" data-i18n-aria="a11y.socialInstagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <img src="assets/images/inst.svg" alt="" class="social-link__icon" width="20" height="20">
             </a>
-            <a href="#" class="social-link" data-config-href="youtube" data-i18n-aria="a11y.socialYouTube" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <a href="#" class="social-link social-link--menu" data-config-href="youtube" data-i18n-aria="a11y.socialYouTube" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <img src="assets/images/yt.svg" alt="" class="social-link__icon" width="20" height="20">
             </a>
           </div>
         </div>
         <div class="mobile-menu__legal">
           <a href="privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a>
-          <a href="terms-of-use.html" data-i18n="footer.terms">Terms of Use</a>
           <a href="mailto:support@selftour.app" data-config-email>support@selftour.app</a>
         </div>
       </div>
@@ -422,10 +423,10 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <a href="#home" class="logo">
-          <img src="assets/images/logo-selftour-white.svg" alt="" class="logo__img" width="94" height="19" data-i18n-alt="brand.name">
+        <a href="#home" class="logo logo--footer">
+          <img src="assets/images/logo-selftour-footer.svg" alt="" class="logo__img logo__img--footer" width="158" height="32" data-i18n-alt="brand.name">
         </a>
-        <p class="footer__tagline" data-i18n-html="footer.tagline">Your AI-powered audio guide.<br>Turn any city into a living museum</p>
+        <p class="footer__tagline" data-i18n-html="footer.tagline">Your AI-powered personal tour guide.<br>Stories for every street you walk</p>
         <div class="social-links social-links--footer">
           <a href="#" class="social-link social-link--footer" data-config-href="tiktok" data-i18n-aria="a11y.socialTikTok" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
             <img src="assets/images/tt.svg" alt="TikTok" class="social-link__icon">
@@ -456,8 +457,6 @@
         <div class="footer__col">
           <h4 class="footer__col-title" data-i18n="footer.support">Support</h4>
           <a href="mailto:support@selftour.app" class="footer__link" data-config-email>support@selftour.app</a>
-          <a href="#" class="footer__link" data-i18n="footer.faq">FAQ</a>
-          <a href="#" class="footer__link" data-i18n="footer.contact">Contact Us</a>
         </div>
       </div>
     </div>
